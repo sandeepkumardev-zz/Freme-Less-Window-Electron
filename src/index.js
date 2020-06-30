@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, globalShortcut } = require("electron");
 const path = require("path");
 
 const createWindow = () => {
@@ -11,5 +11,9 @@ const createWindow = () => {
     },
   });
   mainWindow.loadFile(path.join(__dirname, "index.html"));
+  // minimize or maximize with 'ctrl+x' command
+  globalShortcut.register("CommandOrControl+x", () => {
+    mainWindow.isMaximized() ? mainWindow.unmaximize() : mainWindow.maximize();
+  });
 };
 app.on("ready", createWindow);
