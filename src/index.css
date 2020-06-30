@@ -11,12 +11,21 @@ div {
 }
 
 header {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-start;
   background: gray;
   align-self: stretch;
+  display: flex;
+  justify-content: space-between;
   -webkit-app-region: drag;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.navName {
+  font-size: 1.7rem;
+  margin-left: 10px;
+}
+.winButton {
+  flex-direction: row-reverse;
+  display: flex;
 }
 
 #content {
